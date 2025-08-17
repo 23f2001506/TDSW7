@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Q2 FY2025 – Interactive Earnings Report (RevealJS)</title>
+
+    <!-- RevealJS core + theme (CDN for easy GitHub Pages hosting) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css" id="theme" />
+
+    <!-- Code highlighting theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css" />
+
+    <style>
+      /* simple footer */
+      .footer {
+        position: fixed; left: 1rem; right: 1rem; bottom: 0.6rem;
+        display: flex; justify-content: space-between; font-size: 0.5em; opacity: 0.7;
+      }
+      .brand { font-weight: 600; }
+      /* responsive tweak for charts/iframes if you add later */
+      .chart, .demo-frame { width: 100%; height: min(60vh, 520px); border: 0; }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- Title -->
+        <section>
+          <h1>Quarterly Earnings Report</h1>
+          <h3>Q2 FY2025 • Interactive Technical Briefing</h3>
+          <p>
+            Presented by: <strong>Technical Consultant</strong><br/>
+            Contact: <a href="mailto:23f2001506@ds.study.iitm.ac.in">23f2001506@ds.study.iitm.ac.in</a>
+          </p>
+          <p><small>Tip: Press <kbd>S</kbd> for speaker notes, <kbd>O</kbd> for overview.</small></p>
+          <aside class="notes">
+            Welcome everyone. This deck demonstrates modern RevealJS capabilities while walking through the key results for Q2 FY2025.
+            Use left/right arrows to navigate. The agenda follows next.
+          </aside>
+        </section>
+
+        <!-- Markdown slide (at least one required) -->
+        <section data-markdown>
+          <textarea data-template>
+## Agenda
+
+- Highlights & KPIs
+- Revenue & Margin Trend
+- Cost Drivers & Efficiency
+- Outlook and Guidance
+- Q&A
+
+---
+
+## Data Policy
+
+- All figures are illustrative for the demo
+- Charts and tables refresh via live pages when embedded
+- PDF export supported via **File → Print to PDF** or Decktape
+          </textarea>
+        </section>
+
+        <!-- Fragments for progressive reveal -->
+        <section>
+          <h2>Q2 Highlights</h2>
+          <ul>
+            <li class="fragment">Revenue growth <strong>+11.4% YoY</strong></li>
+            <li class="fragment fade-up">Operating margin expanded by <strong>+120 bps</strong></li>
+            <li class="fragment fade-in-then-semi-out">Free cash flow positive for third straight quarter</li>
+            <li class="fragment highlight-current-blue">Cloud & Payments segments led upside</li>
+          </ul>
+          <aside class="notes">Pause briefly at each bullet as it appears. Emphasize operating leverage and segment mix.</aside>
+        </section>
+
+        <!-- Code sample with syntax highlighting & line highlights -->
+        <section>
+          <h2>Analyst Snippet (Python)</h2>
+          <pre><code class="language-python" data-line-numbers="1-4|6-10|12-15">
+import pandas as pd
+
+def ebitda_margin(ebitda, revenue):
+    return round(100 * ebitda / revenue, 2)
+
+# Example: compute segment margins
+segments = pd.DataFrame({
+    "segment": ["Cloud", "Payments", "AdTech"],
+    "revenue": [420.0, 265.0, 190.0],
+    "ebitda": [134.0, 72.5, 41.8]
+})
+
+segments["ebitda_margin_%"] = ebitda_margin(segments["ebitda"], segments["revenue"])  # vectorized in pandas
+print(segments)
+          </code></pre>
+          <aside class="notes">Use this to show how internal notebooks compute KPIs that flow into slides. Line highlights step with arrow keys.</aside>
+        </section>
+
+        <!-- Math / Financial formulas with MathJax -->
+        <section>
+          <h2>Financial Formulas</h2>
+          <p><strong>Net Present Value (NPV)</strong></p>
+          <p>\[\mathrm{NPV} = -C_0 + \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} \]</p>
+          <p><strong>CAPM Expected Return</strong></p>
+          <p>\[\mathbb{E}[R_i] = R_f + \beta_i\,(\mathbb{E}[R_m] - R_f)\]</p>
+          <aside class="notes">Tie NPV to project evaluation in the appendix; CAPM informs hurdle rates for sensitivity analysis.</aside>
+        </section>
+
+        <!-- Optional live demo placeholder (kept lightweight) -->
+        <section>
+          <h2>Live Demo Placeholder</h2>
+          <p class="fragment">Embed a live chart, dashboard, or KPI table here via an iframe.</p>
+          <iframe class="demo-frame fragment" data-src="https://example.com" data-preload title="Demo"></iframe>
+          <aside class="notes">Replace with an internal dashboard URL when presenting to stakeholders (only if access-controlled).</aside>
+        </section>
+
+        <!-- Closing -->
+        <section>
+          <h2>Thank You</h2>
+          <p>Questions? Reach me at <a href="mailto:23f2001506@ds.study.iitm.ac.in">23f2001506@ds.study.iitm.ac.in</a></p>
+          <aside class="notes">Open floor for Q&A. Keep slide visible while addressing questions.</aside>
+        </section>
+      </div>
+    </div>
+
+    <!-- RevealJS core & plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        width: 1280,
+        height: 720,
+        margin: 0.05,
+        controls: true,
+        progress: true,
+        transition: 'slide',
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.MathJax3 ],
+        mathjax3: {
+          tex: { inlineMath: [['$','$'], ['\\(','\\)']] }
+        }
+      });
+    </script>
+
+    <div class="footer">
+      <span class="brand">RevealJS • Q2 FY2025 Earnings</span>
+      <span>© 2025 • 23f2001506@ds.study.iitm.ac.in</span>
+    </div>
+  </body>
+</html>
